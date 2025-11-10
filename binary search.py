@@ -53,7 +53,9 @@ item found
 
 if(found):
     print('item found')
+    print(search_term, 'at position', mid)
 else:
     print('item not found')
 
 # end of algorithm
+
