@@ -1,6 +1,8 @@
 import time
 import random
 numbers = [random.randint(1, 100) for x in range(10)]
+# note that the timer may not work the first few times and you may need to run it multiple times
+# this program compares how much time the bubble, wuick and insertion sort take
 
 def sub_bsort(arr): # bubble sort
     n = len(arr)-1
@@ -63,3 +65,4 @@ print("n-1 bubble sorted:", nsub1_bsort_nums)
 end_time2 = time.time()
 elapsed_time2 = end_time2 - start_time2
 print(f"Elapsed time: {elapsed_time2:.4f} seconds")
+
