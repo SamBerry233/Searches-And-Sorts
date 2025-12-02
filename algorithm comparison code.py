@@ -1,6 +1,11 @@
 import time
 import random
 numbers = [random.randint(1, 100) for x in range(10)]
+x = 0
+y = 0
+z = 0
+run = int(input("How many outputs do you want from this program? "))
+
 
 def sub_bsort(arr): # bubble sort
     n = len(arr)-1
@@ -43,21 +48,27 @@ def ins_sort(arr): # insertion sort
         arr[position + 1] = item
     return arr
 
-start_q = time.perf_counter()
-quicksorted_nums = quicksort(numbers.copy())
-end_q = time.perf_counter()
-print("Quicksorted:", quicksorted_nums)
-print(f"Elapsed time (quicksort): {end_q - start_q:.8f} seconds\n")
+while(x != run and y != run and z != run):
+    start_q = time.perf_counter()
+    quicksorted_nums = quicksort(numbers.copy())
+    end_q = time.perf_counter()
+    print(f"{x+1} - Quicksorted:", quicksorted_nums)
+    print(f"{x+1} - Elapsed time (quicksort): {end_q - start_q:.8f} seconds\n")
 
-start_ins = time.perf_counter()
-ins_nums = ins_sort(numbers.copy())
-end_ins = time.perf_counter()
-print("Insertion sorted:", ins_nums)
-print(f"Elapsed time (insertion): {end_ins - start_ins:.8f} seconds\n")
+    start_ins = time.perf_counter()
+    ins_nums = ins_sort(numbers.copy())
+    end_ins = time.perf_counter()
+    print(f"{y+1} - Insertion sorted:", ins_nums)
+    print(f"{y+1} - Elapsed time (insertion): {end_ins - start_ins:.8f} seconds\n")
 
-start_b = time.perf_counter()
-nsub1_bsort_nums = sub_bsort(numbers.copy())
-end_b = time.perf_counter()
-print("n-1 bubble sorted:", nsub1_bsort_nums)
-print(f"Elapsed time (bubble): {end_b - start_b:.8f} seconds")
-
+    start_b = time.perf_counter()
+    nsub1_bsort_nums = sub_bsort(numbers.copy())
+    end_b = time.perf_counter()
+    print(f"{z+1} - n-1 bubble sorted:", nsub1_bsort_nums)
+    print(f"{z+1} - Elapsed time (bubble): {end_b - start_b:.8f} seconds")
+    print(" ")
+    
+    x += 1
+    y += 1
+    z += 1
+    
