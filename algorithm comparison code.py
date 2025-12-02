@@ -32,7 +32,7 @@ def quicksort(arr): # quick sort
             right.append(num)
     return quicksort(left) + equal + quicksort(right)
 
-def ins_sort(arr):
+def ins_sort(arr): # insertion sort
     arrLen = len(arr)
     for index in range(1, arrLen):
         item = arr[index]
@@ -60,3 +60,4 @@ nsub1_bsort_nums = sub_bsort(numbers.copy())
 end_b = time.perf_counter()
 print("n-1 bubble sorted:", nsub1_bsort_nums)
 print(f"Elapsed time (bubble): {end_b - start_b:.8f} seconds")
+
