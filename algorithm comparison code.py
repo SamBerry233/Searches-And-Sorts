@@ -1,8 +1,6 @@
 import time
 import random
 numbers = [random.randint(1, 100) for x in range(10)]
-# note that the timer may not work the first few times and you may need to run it multiple times
-# this program compares how much time the bubble, wuick and insertion sort take
 
 def sub_bsort(arr): # bubble sort
     n = len(arr)-1
@@ -45,24 +43,20 @@ def ins_sort(arr):
         arr[position + 1] = item
     return arr
 
-start_time1 = time.time()
-quicksorted_nums = quicksort(numbers)
+start_q = time.perf_counter()
+quicksorted_nums = quicksort(numbers.copy())
+end_q = time.perf_counter()
 print("Quicksorted:", quicksorted_nums)
-end_time1 = time.time()
-elapsed_time1 = end_time1 - start_time1
-print(f"Elapsed time: {elapsed_time1:.4f} seconds")
+print(f"Elapsed time (quicksort): {end_q - start_q:.8f} seconds\n")
 
-start_time1 = time.time()
-ins_nums = ins_sort(numbers)
+start_ins = time.perf_counter()
+ins_nums = ins_sort(numbers.copy())
+end_ins = time.perf_counter()
 print("Insertion sorted:", ins_nums)
-end_time1 = time.time()
-elapsed_time1 = end_time1 - start_time1
-print(f"Elapsed time: {elapsed_time1:.4f} seconds")
+print(f"Elapsed time (insertion): {end_ins - start_ins:.8f} seconds\n")
 
-start_time2 = time.time()
-nsub1_bsort_nums = sub_bsort(numbers)
+start_b = time.perf_counter()
+nsub1_bsort_nums = sub_bsort(numbers.copy())
+end_b = time.perf_counter()
 print("n-1 bubble sorted:", nsub1_bsort_nums)
-end_time2 = time.time()
-elapsed_time2 = end_time2 - start_time2
-print(f"Elapsed time: {elapsed_time2:.4f} seconds")
-
+print(f"Elapsed time (bubble): {end_b - start_b:.8f} seconds")
